@@ -16,6 +16,7 @@ class User
     {
         print $this->username . " has: \n";
 
+        // $all var is given if the current user object is the dealer and it is the first time he shows his card.
         if ($all) {
             foreach ($this->cards as $card) {
                 print $card->getName() . PHP_EOL;
@@ -51,6 +52,8 @@ class User
             $score += $card->value;
         }
 
+        // used a for loop since there can be multiple aces in a single hand
+        // checking if an ace should be worth 1 or 11 (doing +10 because 1 was already added in the foreach loop)
         for($i = 0; $i < $aces; $i++) {
             if (($score + 10) <= 21) {
                 $score += 10;
@@ -60,6 +63,7 @@ class User
         return $score;
     }
 
+    // Don't question the names
     public function isDead()
     {
         return $this->getScore() > 21;
