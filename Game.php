@@ -26,7 +26,7 @@ class Game
         $dealerDiff = 21 - $dealerScore;
         $playerDiff = 21 - $playerScore;
 
-        // which ever difference is lower wins if they are equal it is a tie
+        // whom ever difference is lower wins if they are equal it's a tie
         if ($dealerDiff < $playerDiff) {
             print "Dealer has won with a score of " . $dealerScore . PHP_EOL;
         } elseif ($dealerDiff > $playerDiff) {
