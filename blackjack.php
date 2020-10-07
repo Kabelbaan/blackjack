@@ -54,7 +54,7 @@ while ($active) {
         }
     }
 
-    // Game::finish returns a true or false wether the user wants to try again
+    // Game::finish returns a true or false whether the user wants to try again
     // if so the loop will repeat if not the program will stop
     $active = Game::finish($player, $dealer);
 }
