@@ -37,13 +37,9 @@ while ($active) {
         $dealer->showCards();
 
         // Dealer's turn
-        while (true) {
+        while ($dealer->getScore() <= 16) {
             // Dealer has to hit if score is below or equal to 16
-            if ($dealer->getScore() <= 16) {
-                Game::hit($dealer);
-            } else {
-                break;
-            }
+            Game::hit($dealer);
         }
 
         // If the dealer is not dead check if there is a winner
